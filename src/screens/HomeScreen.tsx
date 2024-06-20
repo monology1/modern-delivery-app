@@ -1,8 +1,9 @@
-import {Image, ImageBackground, ScrollView, StyleSheet, Text, View} from "react-native";
+import {Image, ImageBackground, SafeAreaView, ScrollView, StyleSheet, Text, View} from "react-native";
 import {AntDesign, Ionicons} from "../utils/Icons";
 import ButtonServices from "../components/ButtonServices";
 import {useNavigation} from "@react-navigation/native";
 import BannerSlider from "../components/BannerSlider";
+import DiscountCodes from "../components/DiscountCodes";
 
 const name = 'modern';
 // const navigate = useNavigation();
@@ -79,11 +80,9 @@ const HomeScreen = () => {
                     <View style={styles.container}>
                         <Text style={styles.subHeader}>Up to ฿100* OFF with codes!</Text>
                     </View>
-                    <ScrollView style={styles.container}
-                                showsVerticalScrollIndicator={false}
-                                showsHorizontalScrollIndicator={false}>
-
-                    </ScrollView>
+                    <SafeAreaView style={styles.container}>
+                        <DiscountCodes/>
+                    </SafeAreaView>
                 </ScrollView>
             </ImageBackground>
         </>
@@ -110,7 +109,7 @@ const styles = StyleSheet.create({
         padding: 20,
         backgroundColor: 'transparent',
     },
-    subHeader:{
+    subHeader: {
         fontWeight: 'bold'
     },
     greeting: {
