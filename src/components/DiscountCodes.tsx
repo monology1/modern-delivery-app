@@ -12,21 +12,27 @@ type CardItem = {
 const data: CardItem[] = [
     {
         id: 1,
-        title: 'Card Title 1',
-        description: 'This is the description for card 1.',
-        imageUrl: 'https://picsum.photos/200/300?random=1',
+        title: 'Free delivery',
+        description: '฿20* Discount',
+        imageUrl: require('../../assets/images/discount/freeDelivery.png'),
     },
     {
         id: 2,
-        title: 'Card Title 2',
-        description: 'This is the description for card 2.',
-        imageUrl: 'https://picsum.photos/200/300?random=2',
+        title: 'All Discount',
+        description: 'Total up to ฿100*',
+        imageUrl: require('../../assets/images/discount/allDiscount.png'),
     },
     {
         id: 3,
-        title: 'Card Title 3',
-        description: 'This is the description for card 3.',
-        imageUrl: 'https://picsum.photos/200/300?random=3',
+        title: 'Best Sellers',
+        description: '฿70* Discount',
+        imageUrl: require('../../assets/images/discount/bestSellers.png'),
+    },
+    {
+        id: 4,
+        title: 'Green Choices',
+        description: 'Support now!',
+        imageUrl: require('../../assets/images/discount/greenChoices.png'),
     },
     // Add more cards as needed
 ];
@@ -41,6 +47,7 @@ const DiscountCodes = () => {
                         title={item.title}
                         description={item.description}
                         imageUrl={item.imageUrl}
+                        style={{width: 200}}
                     />
                 )}
                 keyExtractor={(item) => item.id.toString()}

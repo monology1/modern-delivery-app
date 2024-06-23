@@ -5,12 +5,13 @@ type CardProps = {
     title: string;
     description: string;
     imageUrl: string;
+    style: any;
 };
 
-const Card = ({title, description, imageUrl}: CardProps) => {
+const Card = ({title, description, imageUrl, style}: CardProps) => {
     return (
-        <View style={styles.card}>
-            <Image source={{uri: imageUrl}} style={styles.image}/>
+        <View style={[[styles.card, style]]}>
+            <Image source={imageUrl} style={styles.image}/>
             <View style={styles.textContainer}>
                 <Text style={styles.title}>{title}</Text>
                 <Text style={styles.description}>{description}</Text>
@@ -20,7 +21,7 @@ const Card = ({title, description, imageUrl}: CardProps) => {
 };
 const styles = StyleSheet.create({
     card: {
-        width: 250, // Fixed width for horizontal layout
+        width: 250,
         borderRadius: 8,
         backgroundColor: '#fff',
         marginBottom: 20,
@@ -39,8 +40,8 @@ const styles = StyleSheet.create({
         padding: 10,
     },
     title: {
-        fontSize: 18,
-        fontWeight: 'bold',
+        fontSize: 16,
+        fontWeight: 'semibold',
         marginBottom: 5,
     },
     description: {

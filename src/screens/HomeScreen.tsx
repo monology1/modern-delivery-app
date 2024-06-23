@@ -80,7 +80,7 @@ const HomeScreen = () => {
                     <View style={styles.container}>
                         <Text style={styles.subHeader}>Up to ฿100* OFF with codes!</Text>
                     </View>
-                    <SafeAreaView style={styles.container}>
+                    <SafeAreaView style={styles.discountContainer}>
                         <DiscountCodes/>
                     </SafeAreaView>
                 </ScrollView>
@@ -170,6 +170,9 @@ const styles = StyleSheet.create({
     bannerImage: {
         width: '100%',
         height: 150,
+    },
+    discountContainer: {
+        marginTop: 20
     }
 });
 
